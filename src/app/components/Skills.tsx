@@ -5,12 +5,12 @@ export function Skills() {
     {
       icon: <Code size={32} />,
       title: 'Développement',
-      items: ['HTML/CSS/JavaScript', 'React', 'Python', 'PHP', 'Java'],
+      items: ['HTML/CSS/JavaScript', 'Kotlin', 'Python', 'PHP', 'Java'],
     },
     {
       icon: <Database size={32} />,
       title: 'Bases de données',
-      items: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL'],
+      items: ['MySQL', 'PostgreSQL', 'MariaDB', 'SQL'],
     },
     {
       icon: <Server size={32} />,
@@ -20,7 +20,7 @@ export function Skills() {
     {
       icon: <Globe size={32} />,
       title: 'Web & API',
-      items: ['REST API', 'Node.js', 'Express', 'Git/GitHub'],
+      items: [ 'Node.js', 'CakePhp', 'Git/GitHub'],
     },
     {
       icon: <Shield size={32} />,
@@ -30,7 +30,7 @@ export function Skills() {
     {
       icon: <Cpu size={32} />,
       title: 'Outils',
-      items: ['VS Code', 'Docker', 'Git', 'Postman'],
+      items: ['VS Code', 'Docker', 'Git', 'Apashe NetBeans'],
     },
   ];
 

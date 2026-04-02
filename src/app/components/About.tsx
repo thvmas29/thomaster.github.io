@@ -8,8 +8,8 @@ export function About() {
             <h3 className="mb-4">Mon parcours</h3>
             <p className="text-foreground/80 mb-4">
               Actuellement en BTS Services Informatiques aux Organisations, je me forme
-              aux métiers de l'informatique avec une spécialisation en développement
-              d'applications (SLAM) et en solutions d'infrastructure, systèmes et réseaux (SISR).
+              aux métiers de l'informatique avec la spécialité de développement
+              d'applications (SLAM).
             </p>
             <p className="text-foreground/80">
               Mon objectif est de devenir un professionnel polyvalent, capable de concevoir

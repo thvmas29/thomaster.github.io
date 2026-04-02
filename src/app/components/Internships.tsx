@@ -20,10 +20,10 @@ interface Internship {
 const internships: Internship[] = [
   {
     id: 1,
-    company: "Entreprise XYZ",
-    position: "Développeur Web - Stage 1ère année",
-    location: "Paris, France",
-    period: "Mai 2025 - Juillet 2025",
+    company: "Lycée Professionel Marie Curie",
+    position: "Informaticien - Stage 1ère année",
+    location: "Saint-Anne, La Réunion",
+    period: "Mai 2025 - 20 Juin 2025",
     description: "Stage de développement web au sein d'une entreprise de services numériques spécialisée dans la création de solutions web pour les PME.",
     tasks: [
       "Développement de sites web responsive",

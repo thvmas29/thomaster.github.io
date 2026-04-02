@@ -18,8 +18,8 @@ export function Contact() {
               <Mail className="text-primary mt-1 flex-shrink-0" size={20} />
               <div>
                 <h4 className="mb-1">Email</h4>
-                <a href="mailto:votre.email@example.com" className="text-foreground/80 hover:text-primary">
-                  votre.email@example.com
+                <a href="mailto:terralthomas17@gmail.com" className="text-foreground/80 hover:text-primary">
+                  terralthomas17@gmail.com
                 </a>
               </div>
             </div>
@@ -27,8 +27,8 @@ export function Contact() {
               <Phone className="text-primary mt-1 flex-shrink-0" size={20} />
               <div>
                 <h4 className="mb-1">Téléphone</h4>
-                <a href="tel:+33612345678" className="text-foreground/80 hover:text-primary">
-                  +33 6 12 34 56 78
+                <a href="tel:+262692061425" className="text-foreground/80 hover:text-primary">
+                  +262 692 06 14 25
                 </a>
               </div>
             </div>
@@ -36,7 +36,7 @@ export function Contact() {
               <MapPin className="text-primary mt-1 flex-shrink-0" size={20} />
               <div>
                 <h4 className="mb-1">Localisation</h4>
-                <p className="text-foreground/80">Paris, France</p>
+                <p className="text-foreground/80">Saint-Benoît, La Réunion</p>
               </div>
             </div>
           </div>
