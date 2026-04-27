@@ -26,4 +26,7 @@ export const router = createBrowserRouter([
       { path: "contact", Component: ContactPage },
     ],
   },
-]);
+], {
+  // This is the essential part that fixes the "No routes matched" error
+  basename: "/thomaster.github.io/"
+});
