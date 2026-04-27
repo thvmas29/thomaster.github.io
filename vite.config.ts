@@ -16,7 +16,8 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: '/thomaster.github.io/', // <--- ADD THIS LINE EXACTLY
+  // Changed this to relative pathing to fix the white screen issue
+  base: './', 
   plugins: [
     figmaAssetResolver(),
     react(),
@@ -27,5 +28,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  // Ensure assets are handled correctly during build
   assetsInclude: ['**/*.svg', '**/*.csv'],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  }
 })
