@@ -1,39 +1,45 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { label: 'Accueil', href: '#accueil' },
-    { label: 'À propos', href: '#apropos' },
-    { label: 'Présentation', href: '#presentation' },
-    { label: 'Compétences', href: '#competences' },
-    { label: 'Stages', href: '#internships' },
-    { label: 'Projets', href: '#projets' },
-    { label: 'Veille Tech', href: '#veille-tech' },
-    { label: 'Veille Juridique', href: '#veille-juridique' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Accueil', href: '/' },
+    { label: 'À propos', href: '/about' },
+    { label: 'Compétences', href: '/skills' },
+    { label: 'Stages', href: '/internships' },
+    { label: 'Contact', href: '/contact' },
   ];
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md border-b border-border z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h2 className="text-primary">Portfolio BTS SIO</h2>
+            <Link to="/">
+              <h2 className="text-primary">Portfolio BTS SIO</h2>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors"
+                to={item.href}
+                className={`transition-colors ${
+                  isActive(item.href)
+                    ? 'text-primary'
+                    : 'text-foreground/80 hover:text-primary'
+                }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -51,14 +57,18 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-2">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
-                className="block py-2 text-foreground/80 hover:text-primary transition-colors"
+                to={item.href}
+                className={`block py-2 transition-colors ${
+                  isActive(item.href)
+                    ? 'text-primary'
+                    : 'text-foreground/80 hover:text-primary'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         )}

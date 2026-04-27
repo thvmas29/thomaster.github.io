@@ -23,7 +23,7 @@ const internships: Internship[] = [
     company: "Lycée Professionel Marie Curie",
     position: "Informaticien - Stage 1ère année",
     location: "Saint-Anne, La Réunion",
-    period: "Mai 2025 - 20 Juin 2025",
+    period: "26 Mai 2025 - 21 Juin 2025",
     description: "Stage de développement web au sein d'une entreprise de services numériques spécialisée dans la création de solutions web pour les PME.",
     tasks: [
       "Développement de sites web responsive",

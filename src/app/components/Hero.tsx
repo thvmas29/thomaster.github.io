@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
 export function Hero() {
@@ -16,12 +17,12 @@ export function Hero() {
         </div>
 
         <div className="flex justify-center space-x-4 mb-8">
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
           >
             Me contacter
-          </a>
+          </Link>
           <a
             href="#projets"
             className="px-6 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors"
@@ -37,9 +38,9 @@ export function Hero() {
           <a href="#" className="text-foreground/60 hover:text-primary transition-colors">
             <Linkedin size={24} />
           </a>
-          <a href="#contact" className="text-foreground/60 hover:text-primary transition-colors">
+          <Link to="/contact" className="text-foreground/60 hover:text-primary transition-colors">
             <Mail size={24} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

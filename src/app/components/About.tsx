@@ -25,7 +25,7 @@ export function About() {
                 <p className="text-muted-foreground">2024 - 2026</p>
               </div>
               <div className="p-4 bg-card rounded-lg border border-border">
-                <h4 className="mb-2">Baccalauréat</h4>
+                <h4 className="mb-2">Baccalauréat Général</h4>
                 <p className="text-muted-foreground">Obtenu en 2024</p>
               </div>
             </div>
