@@ -16,7 +16,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: './', // Add this line right here!
+  base: '/thomaster.github.io/', // <--- ADD THIS LINE EXACTLY
   plugins: [
     figmaAssetResolver(),
     react(),
