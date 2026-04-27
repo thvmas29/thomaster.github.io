@@ -5,11 +5,13 @@ import { HashRouter } from "react-router";
 
 const container = document.getElementById("root");
 
-if (container) {
-  const root = createRoot(container);
-  root.render(
-    <HashRouter>
-      <App />
-    </HashRouter>
-  );
+if (!container) {
+  throw new Error("Failed to find the root element. Check your index.html");
 }
+
+const root = createRoot(container);
+root.render(
+  <HashRouter>
+    <App />
+  </HashRouter>
+);
