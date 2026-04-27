@@ -16,6 +16,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
+  base: './', // Add this line right here!
   plugins: [
     figmaAssetResolver(),
     react(),
