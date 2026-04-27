@@ -18,4 +18,7 @@ export const router = createBrowserRouter([
       { path: "contact", Component: ContactPage },
     ],
   },
-]);
+], {
+  // This tells the router that your site is in a subfolder
+  basename: "/thomaster.github.io/"
+});
