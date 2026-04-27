@@ -1,13 +1,21 @@
 export function Footer() {
   return (
-    <footer className="py-8 px-4 border-t border-border bg-muted/30">
-      <div className="max-w-6xl mx-auto text-center">
-        <p className="text-muted-foreground">
-          © 2026 Portfolio BTS SIO. Tous droits réservés.
-        </p>
-        <p className="text-muted-foreground mt-2">
-          Développé avec React & Tailwind CSS
-        </p>
+    <footer className="border-t border-border bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="text-center space-y-4">
+          <div>
+            <p className="text-lg font-semibold text-foreground">Thomas TERRAL</p>
+            <p className="text-sm text-muted-foreground">Portfolio BTS SIO</p>
+          </div>
+
+          <p className="text-sm text-muted-foreground">
+            Développé avec React & Tailwind CSS
+          </p>
+
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Tous droits réservés
+          </p>
+        </div>
       </div>
     </footer>
   );

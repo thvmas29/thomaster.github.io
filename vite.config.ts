@@ -3,7 +3,7 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
-// This helps Vite find images exported from Figma that use the "figma:asset/" prefix
+
 function figmaAssetResolver() {
   return {
     name: 'figma-asset-resolver',
@@ -17,23 +17,20 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  // Matches your GitHub repository name exactly
-  base: '/thomaster.github.io/', 
   plugins: [
     figmaAssetResolver(),
+    // The React and Tailwind plugins are both required for Make, even if
+    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
   ],
   resolve: {
     alias: {
+      // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
     },
   },
+
+  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    // Sourcemaps help us see the real code errors in the browser console
-    sourcemap: true 
-  }
 })
