@@ -3,23 +3,10 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
-function figmaAssetResolver() {
-  return {
-    name: 'figma-asset-resolver',
-    resolveId(id) {
-      if (id.startsWith('figma:asset/')) {
-        const filename = id.replace('figma:asset/', '')
-        return path.resolve(__dirname, 'src/assets', filename)
-      }
-    },
-  }
-}
-
 export default defineConfig({
-  // Changed this to relative pathing to fix the white screen issue
-  base: './', 
+  // This matches your specific GitHub URL folder exactly
+  base: '/thomaster.github.io/', 
   plugins: [
-    figmaAssetResolver(),
     react(),
     tailwindcss(),
   ],
@@ -28,10 +15,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  // Ensure assets are handled correctly during build
-  assetsInclude: ['**/*.svg', '**/*.csv'],
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    // This helps debug by showing exactly what went wrong in the console
+    sourcemap: true 
   }
 })
