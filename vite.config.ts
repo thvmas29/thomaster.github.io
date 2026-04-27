@@ -1,36 +1,47 @@
-import { defineConfig } from 'vite'
-import path from 'path'
-import tailwindcss from '@tailwindcss/vite'
-import react from '@vitejs/plugin-react'
+name: Deploy Vite Site
 
+on:
+  push:
+    branches: ["main"] # Ensure this matches your branch name
+  workflow_dispatch:
 
-function figmaAssetResolver() {
-  return {
-    name: 'figma-asset-resolver',
-    resolveId(id) {
-      if (id.startsWith('figma:asset/')) {
-        const filename = id.replace('figma:asset/', '')
-        return path.resolve(__dirname, 'src/assets', filename)
-      }
-    },
-  }
-}
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-export default defineConfig({
-  plugins: [
-    figmaAssetResolver(),
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
-    react(),
-    tailwindcss(),
-  ],
-  resolve: {
-    alias: {
-      // Alias @ to the src directory
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
-  assetsInclude: ['**/*.svg', '**/*.csv'],
-})
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        # Figma projects often use npm or pnpm; this covers standard npm
+        run: npm install 
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
