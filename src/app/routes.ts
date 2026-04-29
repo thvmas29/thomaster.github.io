@@ -12,7 +12,6 @@ import { VeillesPage } from "./pages/VeillesPage";
 import { TechWatchPage } from "./pages/TechWatchPage";
 import { LegalWatchPage } from "./pages/LegalWatchPage";
 
-// On définit les routes normalement
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -32,8 +31,5 @@ export const router = createBrowserRouter([
     ],
   },
 ], {
-  /* IMPORTANT : C'est ici que l'on règle l'erreur 404 sur GitHub Pages.
-     Le basename doit correspondre exactement au nom de ton dépôt.
-  */
   basename: "/thomaster.github.io"
 });
