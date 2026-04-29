@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { Laptop, Scale, ArrowRight } from 'lucide-react';
 
 export function VeillesPage() {

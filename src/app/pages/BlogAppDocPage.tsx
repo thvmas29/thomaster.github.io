@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { ArrowLeft, ChevronLeft, ChevronRight, Download, FileText } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
@@ -15,7 +15,7 @@ export function BlogAppDocPage() {
   const [error, setError] = useState<string | null>(null);
 
   // Construct PDF URL - import.meta.env.BASE_URL already includes trailing slash
-  const pdfUrl = `${import.meta.env.BASE_URL}Documentation_BLOG_APP.pdf`;
+  const pdfUrl = `${import.meta.env.BASE_URL}Documentation_BLOG_APP_TERRAL_Thomas_v4-3.pdf`;
 
   console.log('Base URL:', import.meta.env.BASE_URL);
   console.log('PDF URL:', pdfUrl);
@@ -69,7 +69,7 @@ export function BlogAppDocPage() {
 
           <a
             href={pdfUrl}
-            download="Documentation_BLOG_APP_TERRAL_Thomas.pdf"
+            download="Documentation_BLOG_APP_TERRAL_Thomas_v4-3.pdf"
             className="inline-flex items-center space-x-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
           >
             <Download size={18} />
@@ -148,7 +148,7 @@ export function BlogAppDocPage() {
                   </p>
                   <a
                     href={pdfUrl}
-                    download="Documentation_BLOG_APP_TERRAL_Thomas.pdf"
+                    download="Documentation_BLOG_APP_TERRAL_Thomas_v4-3.pdf"
                     className="inline-flex items-center space-x-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
                   >
                     <Download size={18} />

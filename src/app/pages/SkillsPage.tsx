@@ -10,7 +10,6 @@ export function SkillsPage() {
         { name: 'HTML/CSS/JavaScript', level: 'Avancé' },
         { name: 'PHP', level: 'Intermédiaire' },
         { name: 'Python', level: 'Intermédiaire' },
-        { name: 'Kotlin', level: 'Débutant' },
         { name: 'Java', level: 'Débutant' },
       ],
     },
@@ -19,10 +18,9 @@ export function SkillsPage() {
       title: 'Bases de données',
       description: 'Systèmes de gestion de bases de données relationnelles',
       skills: [
-        { name: 'MySQL', level: 'Avancé' },
-        { name: 'PostgreSQL', level: 'Avancé' },
-        { name: 'MariaDB', level: 'Intermédiaire' },
-        { name: 'SQL', level: 'Avancé' },
+        { name: 'MySQL', level: 'Intermédiaire' },
+        { name: 'PostgreSQL', level: 'Intermédiaire' },
+        { name: 'SQL', level: 'Intermédiaire' },
       ],
     },
     {
@@ -32,19 +30,15 @@ export function SkillsPage() {
       skills: [
         { name: 'Linux', level: 'Intermédiaire' },
         { name: 'Windows Server', level: 'Débutant' },
-        { name: 'Docker', level: 'Intermédiaire' },
         { name: 'Virtualisation', level: 'Débutant' },
       ],
     },
     {
       icon: <Globe size={32} />,
-      title: 'Web & API',
-      description: 'Développement web et interfaces de programmation',
+      title: 'Web & Frameworks',
+      description: 'Développement web et frameworks',
       skills: [
-        { name: 'Node.js', level: 'Intermédiaire' },
         { name: 'CakePHP', level: 'Avancé' },
-        { name: 'Git/GitHub', level: 'Avancé' },
-        { name: 'REST API', level: 'Intermédiaire' },
       ],
     },
     {
@@ -64,9 +58,8 @@ export function SkillsPage() {
       description: 'Environnements de développement et outils',
       skills: [
         { name: 'VS Code', level: 'Avancé' },
-        { name: 'Docker', level: 'Intermédiaire' },
-        { name: 'Git', level: 'Avancé' },
         { name: 'Apache NetBeans', level: 'Intermédiaire' },
+        { name: 'GLPI', level: 'Intermédiaire' },
       ],
     },
   ];

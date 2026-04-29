@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { projects } from '../data/projects';
+import { resolveImagePath } from '../utils/imagePath';
 
 export function Projects() {
   return (
@@ -42,19 +43,23 @@ export function Projects() {
             >
               <div className="glass-effect rounded-3xl border border-primary/20 overflow-hidden hover:border-primary/50 transition-all duration-500 h-full">
                 {/* Image */}
-                <div className="relative overflow-hidden h-56">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60"></div>
+                {project.image && (
+                  <div className="relative overflow-hidden h-56">
+                    <img
+                      src={resolveImagePath(project.image)}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60"></div>
 
-                  {/* Floating icon */}
-                  <div className="absolute top-4 right-4 p-3 glass-effect rounded-2xl border border-primary/30 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                    <ExternalLink size={20} className="text-primary" />
+                    {/* Floating icon */}
+                    {project.clickable !== false && (
+                      <div className="absolute top-4 right-4 p-3 glass-effect rounded-2xl border border-primary/30 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                        <ExternalLink size={20} className="text-primary" />
+                      </div>
+                    )}
                   </div>
-                </div>
+                )}
 
                 {/* Content */}
                 <div className="p-6">

@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 import { projects } from '../data/projects';
+import { resolveImagePath } from '../utils/imagePath';
 
 export function ProjectsPage() {
   return (
@@ -27,13 +28,15 @@ export function ProjectsPage() {
               className="group bg-white border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden bg-slate-100">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+              {project.image && (
+                <div className="relative h-48 overflow-hidden bg-slate-100">
+                  <img
+                    src={resolveImagePath(project.image)}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
 
               {/* Content */}
               <div className="p-6">

@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   technologies: string[];
   image: string;
+  clickable?: boolean;
   detailedDescription?: {
     presentation: string;
     overview: string;
@@ -21,7 +22,7 @@ export const projects: Project[] = [
     title: 'Blog App CakePHP',
     description: 'Application web de blog permettant aux utilisateurs de créer un compte, se connecter et publier des articles avec système de commentaires et tags.',
     technologies: ['CakePHP', 'PostgreSQL', 'PHP', 'MVC'],
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop',
+    image: 'cakephp-1.png',
     detailedDescription: {
       presentation: 'Le projet Blog App est une application web qui permet à des utilisateurs de créer un compte, de se connecter, et de publier des articles de blog. L\'application a été réalisée avec le framework CakePHP, en utilisant une base de données PostgreSQL.',
       overview: 'Blog App est une plateforme de publication complète développée selon l\'architecture MVC (Modèle-Vue-Contrôleur) du framework CakePHP. L\'application offre une expérience utilisateur fluide et intuitive, permettant la création, la gestion et le partage de contenu éditorial. Le système repose sur une architecture robuste avec PostgreSQL comme base de données relationnelle, assurant la persistance et l\'intégrité des données. L\'application implémente un système d\'authentification sécurisé, une gestion avancée des articles avec catégorisation par tags, et un système de commentaires interactif favorisant l\'engagement des lecteurs.',
@@ -48,27 +49,30 @@ export const projects: Project[] = [
         }
       ]
     },
-    documentationUrl: 'Documentation_BLOG_APP.pdf'
+    documentationUrl: 'Documentation_BLOG_APP_TERRAL_Thomas_v4-3.pdf'
   },
   {
     id: 'application-gestion',
-    title: 'Application de gestion',
-    description: 'Développement d\'une application web de gestion pour une PME, incluant la gestion des clients, des commandes et du stock.',
-    technologies: ['React', 'Node.js', 'MySQL'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop'
+    title: 'GLPI - Gestion de parc informatique',
+    description: 'Utilisation de GLPI pour la gestion des tickets d\'incidents, l\'inventaire du matériel informatique et le suivi des interventions techniques.',
+    technologies: ['GLPI', 'MySQL', 'Support IT'],
+    image: 'GLPI_Logo-color.png',
+    documentationUrl: 'GLPI_Guide_Essentiel.pdf'
   },
   {
-    id: 'infrastructure-reseau',
-    title: 'Infrastructure réseau',
-    description: 'Mise en place d\'une infrastructure réseau sécurisée avec serveurs virtualisés et gestion des accès.',
-    technologies: ['Linux', 'Docker', 'Virtualisation'],
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop'
+    id: 'maison-des-ligues',
+    title: 'Maison Des Ligues',
+    description: 'Application web de type blog développée avec CakePHP et PostgreSQL pour la gestion des ligues sportives.',
+    technologies: ['CakePHP', 'PostgreSQL', 'PHP'],
+    image: '',
+    clickable: false
   },
   {
-    id: 'api-rest',
-    title: 'API REST',
-    description: 'Conception et développement d\'une API REST pour une application mobile, avec authentification et gestion des données.',
-    technologies: ['Node.js', 'Express', 'MongoDB'],
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop'
+    id: 'microprojet',
+    title: 'Microprojet',
+    description: 'Petit projet de développement web',
+    technologies: ['Web'],
+    image: '',
+    clickable: false
   },
 ];

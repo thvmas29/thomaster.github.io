@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import { Calendar, MapPin, Building, ChevronLeft, ChevronRight, Presentation } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { resolveImagePath } from '../utils/imagePath';
 
 interface Internship {
   id: number;
@@ -15,50 +16,56 @@ interface Internship {
   technologies: string[];
   achievements: string[];
   slideshowUrl: string;
+  logo?: string;
 }
 
 const internships: Internship[] = [
   {
     id: 1,
-    company: "Lycée Professionel Marie Curie",
+    company: "Lycée Professionnel Marie Curie",
     position: "Informaticien - Stage 1ère année",
     location: "Saint-Anne, La Réunion",
     period: "26 Mai 2025 - 21 Juin 2025",
-    description: "Stage de développement web au sein d'une entreprise de services numériques spécialisée dans la création de solutions web pour les PME.",
+    description: "Stage au sein du service informatique du lycée, axé sur le support technique, la gestion des incidents et la maintenance du parc informatique de l'établissement.",
     tasks: [
-      "Développement de sites web responsive",
-      "Maintenance et mise à jour de sites existants",
-      "Participation aux réunions clients",
-      "Tests et débogage"
+      "Gestion et résolution d'incidents informatiques",
+      "Maintenance et réparation du matériel informatique (PC, imprimantes, périphériques)",
+      "Utilisation de GLPI pour la gestion des tickets d'assistance",
+      "Support technique aux utilisateurs (personnel et élèves)",
+      "Diagnostics matériels et logiciels",
+      "Installation et configuration de postes de travail"
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "WordPress"],
+    technologies: ["GLPI", "Windows", "Hardware", "Réseaux", "Support utilisateur"],
     achievements: [
-      "Création de 3 sites web complets",
-      "Amélioration des performances de 40% sur un site existant",
-      "Mise en place d'un système de gestion de contenu"
+      "Traitement de plus de 50 tickets d'incidents via GLPI",
+      "Réparation et maintenance de nombreux postes informatiques",
+      "Amélioration de la réactivité du support technique",
+      "Documentation des procédures de maintenance"
     ],
     slideshowUrl: "#"
   },
   {
     id: 2,
-    company: "Tech Solutions",
-    position: "Développeur Full-Stack - Stage 2ème année",
-    location: "Lyon, France",
-    period: "Janvier 2026 - Avril 2026",
-    description: "Stage au sein d'une startup développant des applications web innovantes pour le secteur de la santé.",
+    company: "Telecombinatie Wassenaar",
+    position: "Technicien & Assistant Conception - Stage ERASMUS 2ème année",
+    location: "Wassenaar, Pays-Bas",
+    period: "À venir - 2026",
+    description: "Stage international ERASMUS au sein d'une entreprise de télécommunications spécialisée dans la réparation de téléphones mobiles avec participation à la conception d'une application.",
     tasks: [
-      "Développement d'une application web avec React",
-      "Création d'API RESTful avec Node.js",
-      "Intégration de bases de données",
-      "Participation à la méthodologie Agile/Scrum"
+      "Réparation et maintenance de téléphones mobiles",
+      "Diagnostics techniques sur smartphones et tablettes",
+      "Proposition d'idées pour des publicités en ligne",
+      "Conception de diagrammes pour une application mobile"
     ],
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Git", "Docker"],
+    technologies: ["Réparation mobile", "UML/Diagrammes", "Conception d'application"],
     achievements: [
-      "Développement d'un module de gestion des patients",
-      "Optimisation des requêtes API (-50% temps de réponse)",
-      "Documentation technique complète"
+      "Réparation réussie de nombreux appareils mobiles",
+      "Contribution d'idées créatives pour la publicité",
+      "Création de diagrammes conceptuels pour une future application",
+      "Expérience internationale dans un environnement multiculturel"
     ],
-    slideshowUrl: "#"
+    slideshowUrl: "#",
+    logo: "telecombinatie-logo.png"
   }
 ];
 
@@ -115,6 +122,15 @@ export function Internships() {
                 <div className="bg-card rounded-xl border border-border shadow-lg p-8 md:p-10">
                   {/* En-tête */}
                   <div className="border-b border-border pb-6 mb-6">
+                    {internship.logo && (
+                      <div className="flex justify-center mb-6">
+                        <img
+                          src={resolveImagePath(internship.logo)}
+                          alt={`Logo ${internship.company}`}
+                          className="h-24 object-contain"
+                        />
+                      </div>
+                    )}
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <h3 className="mb-2">{internship.position}</h3>

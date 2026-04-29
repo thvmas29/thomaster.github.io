@@ -1,12 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { RouterProvider } from 'react-router-dom'
-import { router } from './app/App' // Importe la constante router
-import './styles/index.css' 
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    {/* RouterProvider injecte le contexte de navigation partout d'un coup */}
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  import { createRoot } from "react-dom/client";
+  import App from "./app/App.tsx";
+  import "./styles/index.css";
+
+  createRoot(document.getElementById("root")!).render(<App />);
+  

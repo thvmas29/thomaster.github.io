@@ -1,6 +1,7 @@
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router';
 import { ArrowLeft, FileText, Calendar, Tag } from 'lucide-react';
 import { projects } from '../data/projects';
+import { resolveImagePath } from '../utils/imagePath';
 
 export function ProjectDetailPage() {
   const { projectId } = useParams<{ projectId: string }>();
@@ -47,13 +48,15 @@ export function ProjectDetailPage() {
       </div>
 
       {/* Featured Image */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full rounded-lg shadow-xl"
-        />
-      </div>
+      {project.image && (
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <img
+            src={resolveImagePath(project.image)}
+            alt={project.title}
+            className="w-full rounded-lg shadow-xl"
+          />
+        </div>
+      )}
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 pb-20">
