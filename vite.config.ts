@@ -16,8 +16,8 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  // IMPORTANT : Pour thomaster.github.io, la base doit être '/'
-  base: '/',
+  // Utiliser './' permet au site de trouver ses fichiers peu importe l'URL
+  base: './', 
   plugins: [
     figmaAssetResolver(),
     react(),
@@ -30,6 +30,7 @@ export default defineConfig({
   },
   assetsInclude: ['**/*.svg', '**/*.csv'],
   build: {
-    outDir: 'dist', // S'assure que le build va dans le bon dossier
+    outDir: 'dist',
+    emptyOutDir: true,
   }
 })
