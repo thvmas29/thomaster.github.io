@@ -24,7 +24,6 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        # Comme tu as un pnpm-workspace, on installe classiquement avec npm pour simplifier
         run: npm install
 
       - name: Build
@@ -36,8 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # C'EST ICI QUE ÇA SE JOUE : 
-          # Vite met les fichiers prêts pour le web dans le dossier 'dist'
+          # On déploie le dossier dist généré par le build
           path: './dist'
 
       - name: Deploy to GitHub Pages
