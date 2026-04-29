@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/thomaster.github.io/',
+  // On utilise './' pour que les chemins soient relatifs et marchent partout
+  base: './', 
   plugins: [
     react(),
     tailwindcss(),
