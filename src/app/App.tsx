@@ -1,7 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Root } from "./components/Root";
 import { HomePage } from "./pages/HomePage";
-// ... (garde tes autres imports de pages ici)
+import { AboutPage } from "./pages/AboutPage";
+import { SkillsPage } from "./pages/SkillsPage";
+import { InternshipsPage } from "./pages/InternshipsPage";
+import { ContactPage } from "./pages/ContactPage";
+import { ProjectsPage } from "./pages/ProjectsPage";
+import { ProjectDetailPage } from "./pages/ProjectDetailPage";
+import { BlogAppDocPage } from "./pages/BlogAppDocPage";
+import { VeillesPage } from "./pages/VeillesPage";
+import { TechWatchPage } from "./pages/TechWatchPage";
+import { LegalWatchPage } from "./pages/LegalWatchPage";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +31,5 @@ export const router = createBrowserRouter([
     ],
   },
 ], {
-  // C'est CA qui enlève le message "No routes matched location"
   basename: "/thomaster.github.io"
 });
