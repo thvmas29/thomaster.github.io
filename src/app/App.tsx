@@ -31,5 +31,6 @@ export const router = createBrowserRouter([
     ],
   },
 ], {
+  // C'est CA qui permet à GitHub Pages de fonctionner sans 404
   basename: "/thomaster.github.io"
 });
