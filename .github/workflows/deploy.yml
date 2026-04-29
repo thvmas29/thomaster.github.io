@@ -24,7 +24,10 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        run: npm install
+        # On force l'installation de react-router-dom au cas où il manque au package.json
+        run: |
+          npm install
+          npm install react-router-dom
 
       - name: Build
         run: npm run build
