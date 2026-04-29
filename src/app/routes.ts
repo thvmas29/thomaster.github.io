@@ -30,4 +30,6 @@ export const router = createBrowserRouter([
       { path: "contact", Component: ContactPage },
     ],
   },
-]);
+], {
+  basename: '/thomaster.github.io',
+});
