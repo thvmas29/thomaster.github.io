@@ -16,8 +16,8 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  // Utiliser './' permet au site de trouver ses fichiers peu importe l'URL
-  base: './', 
+  // IMPORTANT : On remet le nom du repo ici car l'URL contient /thomaster.github.io/
+  base: '/thomaster.github.io/',
   plugins: [
     figmaAssetResolver(),
     react(),
@@ -31,6 +31,5 @@ export default defineConfig({
   assetsInclude: ['**/*.svg', '**/*.csv'],
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
   }
 })
