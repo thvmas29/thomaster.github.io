@@ -1,4 +1,4 @@
-name: Deploy Vite Site
+name: Deploy Figma Site
 
 on:
   push:
@@ -24,9 +24,8 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        # On force l'installation de react-router-dom au cas où il manque au package.json
         run: |
-          npm install
+          npm install --no-package-lock
           npm install react-router-dom
 
       - name: Build
