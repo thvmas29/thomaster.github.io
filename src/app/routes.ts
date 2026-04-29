@@ -31,6 +31,6 @@ export const router = createBrowserRouter([
     ],
   },
 ], {
-  // IMPORTANT: On ajoute le basename ici aussi pour createBrowserRouter
+  // Indispensable pour que thvmas29.github.io/thomaster.github.io/ fonctionne
   basename: "/thomaster.github.io"
 });
