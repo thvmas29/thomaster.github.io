@@ -12,25 +12,27 @@ import { VeillesPage } from "./pages/VeillesPage";
 import { TechWatchPage } from "./pages/TechWatchPage";
 import { LegalWatchPage } from "./pages/LegalWatchPage";
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      Component: Root,
+      children: [
+        { index: true, Component: HomePage },
+        { path: "about", Component: AboutPage },
+        { path: "skills", Component: SkillsPage },
+        { path: "internships", Component: InternshipsPage },
+        { path: "projets", Component: ProjectsPage },
+        { path: "projets/:projectId", Component: ProjectDetailPage },
+        { path: "projets/blog-app-cakephp/documentation", Component: BlogAppDocPage },
+        { path: "veilles", Component: VeillesPage },
+        { path: "veille-technologique", Component: TechWatchPage },
+        { path: "veille-juridique", Component: LegalWatchPage },
+        { path: "contact", Component: ContactPage },
+      ],
+    },
+  ],
   {
-    path: "/",
-    Component: Root,
-    children: [
-      { index: true, Component: HomePage },
-      { path: "about", Component: AboutPage },
-      { path: "skills", Component: SkillsPage },
-      { path: "internships", Component: InternshipsPage },
-      { path: "projets", Component: ProjectsPage },
-      { path: "projets/:projectId", Component: ProjectDetailPage },
-      { path: "projets/blog-app-cakephp/documentation", Component: BlogAppDocPage },
-      { path: "veilles", Component: VeillesPage },
-      { path: "veille-technologique", Component: TechWatchPage },
-      { path: "veille-juridique", Component: LegalWatchPage },
-      { path: "contact", Component: ContactPage },
-    ],
-  },
-], {
-  // C'est CA qui permet à GitHub Pages de fonctionner sans 404
-  basename: "/thomaster.github.io"
-});
+    basename: "/thomaster.github.io",
+  }
+);
