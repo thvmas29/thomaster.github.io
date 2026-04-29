@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { projects } from '../data/projects';
 import { resolveImagePath } from '../utils/imagePath';

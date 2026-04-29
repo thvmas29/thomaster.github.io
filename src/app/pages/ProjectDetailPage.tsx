@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from 'react-router';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, FileText, Calendar, Tag } from 'lucide-react';
 import { projects } from '../data/projects';
 import { resolveImagePath } from '../utils/imagePath';
