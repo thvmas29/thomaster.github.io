@@ -1,15 +1,19 @@
+name: Deploy to GitHub Pages
+
 on:
   push:
-    branches: ["main"] # Or "master" if that's your branch name
+    branches:
+      - main
   workflow_dispatch:
 
+# Autorise GitHub Actions à déployer sur Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
 jobs:
-  build_site:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,27 +22,32 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: '20'
+          # On ne met pas "cache: 'npm'" ici pour éviter l'erreur de lockfile
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install Dependencies
+        # Cette étape ne s'exécute que si tu as un package.json
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          fi
 
-      - name: Build
-        run: npm run build
+      - name: Build Project
+        # Si tu as un script de build (ex: Vite, React), il sera lancé ici
+        run: |
+          if [ -f package.json ]; then
+            npm run build --if-present
+          fi
 
-      - name: Upload Artifacts
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          # Si ton build génère un dossier (ex: 'dist' ou 'build'), remplace '.' par le nom du dossier
+          path: '.'
 
-  deploy:
-    needs: build_site
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
