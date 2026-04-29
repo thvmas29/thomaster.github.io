@@ -1,6 +1,7 @@
-import { RouterProvider } from 'react-router';
-import { router } from './routes';
-
-export default function App() {
-  return <RouterProvider router={router} />;
-}
+// Exemple dans ton main.tsx ou App.tsx
+<BrowserRouter basename="/thomaster.github.io">
+  <Routes>
+    <Route path="/" element={<Home />} />
+    {/* ... tes autres routes */}
+  </Routes>
+</BrowserRouter>
