@@ -4,8 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  // On utilise './' pour que les chemins soient relatifs et marchent partout
-  base: './', 
+  // La base doit être identique au basename de ton main.tsx
+  base: '/thomaster.github.io/',
   plugins: [
     react(),
     tailwindcss(),
