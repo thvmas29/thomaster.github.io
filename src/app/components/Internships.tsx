@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Slider from 'react-slick';
-import { Calendar, MapPin, Building, ChevronLeft, ChevronRight, Presentation } from 'lucide-react';
+import { Calendar, MapPin, Building, ChevronLeft, ChevronRight } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { resolveImagePath } from '../utils/imagePath';
@@ -15,7 +15,6 @@ interface Internship {
   tasks: string[];
   technologies: string[];
   achievements: string[];
-  slideshowUrl: string;
   logo?: string;
 }
 
@@ -41,15 +40,14 @@ const internships: Internship[] = [
       "Réparation et maintenance de nombreux postes informatiques",
       "Amélioration de la réactivité du support technique",
       "Documentation des procédures de maintenance"
-    ],
-    slideshowUrl: "#"
+    ]
   },
   {
     id: 2,
     company: "Telecombinatie Wassenaar",
     position: "Technicien & Assistant Conception - Stage ERASMUS 2ème année",
     location: "Wassenaar, Pays-Bas",
-    period: "À venir - 2026",
+    period: "26 janvier 2026 - 20 mars 2026",
     description: "Stage international ERASMUS au sein d'une entreprise de télécommunications spécialisée dans la réparation de téléphones mobiles avec participation à la conception d'une application.",
     tasks: [
       "Réparation et maintenance de téléphones mobiles",
@@ -64,7 +62,6 @@ const internships: Internship[] = [
       "Création de diagrammes conceptuels pour une future application",
       "Expérience internationale dans un environnement multiculturel"
     ],
-    slideshowUrl: "#",
     logo: "telecombinatie-logo.png"
   }
 ];
@@ -200,22 +197,6 @@ export function Internships() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-
-                  {/* Lien vers le diaporama */}
-                  <div className="border-t border-border pt-6">
-                    <a
-                      href={internship.slideshowUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-3 bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                    >
-                      <Presentation size={20} />
-                      <span>Voir le diaporama de présentation</span>
-                    </a>
-                    <p className="text-sm text-foreground/60 mt-3">
-                      Consultez la présentation complète de ce stage avec captures d'écran et détails supplémentaires
-                    </p>
                   </div>
                 </div>
               </div>
