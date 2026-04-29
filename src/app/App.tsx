@@ -1,16 +1,16 @@
-import { useRoutes } from 'react-router-dom'
-// Importe tes routes depuis ton fichier routes.ts
-import { routes } from './routes' 
+import { useRoutes } from 'react-router-dom';
+import * as RouteModule from './routes'; 
 
 function App() {
-  // Cette fonction va charger la bonne page en fonction de l'URL
-  const element = useRoutes(routes)
+  // Cette ligne est magique : elle récupère les routes peu importe comment Figma les a exportées
+  const routesToUse = (RouteModule as any).routes || (RouteModule as any).default || [];
+  const element = useRoutes(routesToUse);
 
   return (
-    <div className="app-container">
+    <>
       {element}
-    </div>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;
