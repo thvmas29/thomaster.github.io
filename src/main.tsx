@@ -6,7 +6,7 @@ import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* On utilise UNIQUEMENT RouterProvider ici */}
+    {/* On utilise RouterProvider SEUL. Pas de <BrowserRouter> autour ! */}
     <RouterProvider router={router} />
   </React.StrictMode>,
 )
