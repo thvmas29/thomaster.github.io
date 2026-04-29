@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Vite Site
 
 on:
   push:
@@ -24,29 +24,11 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        run: |
-          if [ -f package.json ]; then
-            npm install
-          fi
+        # Comme tu as un pnpm-workspace, on installe classiquement avec npm pour simplifier
+        run: npm install
 
-      - name: Build Project
-        run: |
-          if [ -f package.json ]; then
-            npm run build --if-present
-          fi
-
-      - name: Determine Deployment Directory
-        id: determine_dir
-        run: |
-          # Si un dossier 'dist' existe, on déploie 'dist'
-          # Sinon, on déploie la racine '.'
-          if [ -d "dist" ]; then
-            echo "dir=dist" >> $GITHUB_OUTPUT
-          elif [ -d "build" ]; then
-            echo "dir=build" >> $GITHUB_OUTPUT
-          else
-            echo "dir=." >> $GITHUB_OUTPUT
-          fi
+      - name: Build
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -54,7 +36,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.determine_dir.outputs.dir }}
+          # C'EST ICI QUE ÇA SE JOUE : 
+          # Vite met les fichiers prêts pour le web dans le dossier 'dist'
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
