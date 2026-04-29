@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import { Root } from "./components/Root";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
@@ -30,4 +30,6 @@ export const router = createBrowserRouter([
       { path: "contact", Component: ContactPage },
     ],
   },
-]);
+], {
+  basename: "/thomaster.github.io"
+});
