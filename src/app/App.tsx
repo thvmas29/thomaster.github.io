@@ -1,16 +1,6 @@
-import { useRoutes } from 'react-router-dom';
-import * as RouteModule from './routes'; 
-
+// Ce fichier est conservé pour la structure mais le rendu est géré par le RouterProvider
 function App() {
-  // Cette ligne est magique : elle récupère les routes peu importe comment Figma les a exportées
-  const routesToUse = (RouteModule as any).routes || (RouteModule as any).default || [];
-  const element = useRoutes(routesToUse);
-
-  return (
-    <>
-      {element}
-    </>
-  );
+  return null;
 }
 
 export default App;
