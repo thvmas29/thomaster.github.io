@@ -10,6 +10,7 @@ interface Article {
   tags: string[];
   description: string;
   content: string[];
+  image?: string;
   sources: {
     title: string;
     url: string;
@@ -26,6 +27,7 @@ const articles: Article[] = [
     summary: 'Les outils d\'IA générative comme Midjourney et DALL-E transforment la création d\'assets graphiques pour les jeux vidéo, accélérant considérablement les pipelines de production.',
     tags: ['IA', 'Graphisme', 'Game Art'],
     description: 'Comment l\'intelligence artificielle générative révolutionne la création d\'assets et de textures pour les jeux vidéo.',
+    image: 'https://images.unsplash.com/photo-1717501219526-5cef0a447f76?w=800&auto=format&fit=crop',
     content: [
       'Les studios de jeux vidéo adoptent massivement les outils d\'IA générative pour créer des textures, des concepts arts et des assets 3D. Des outils comme Midjourney, Stable Diffusion et DALL-E permettent de générer rapidement des variations de personnages, d\'environnements et d\'objets.',
       'L\'IA ne remplace pas les artistes, mais devient un outil puissant dans leur workflow. Les concept artists utilisent l\'IA pour explorer rapidement différentes directions artistiques, tandis que les texture artists l\'utilisent pour générer des variations de matériaux et de surfaces.',
@@ -53,6 +55,7 @@ const articles: Article[] = [
     summary: 'Unreal Engine 5 intègre des outils d\'IA pour la génération procédurale de niveaux, l\'animation de personnages et le comportement des NPCs.',
     tags: ['Unreal Engine', 'IA', 'Procédural'],
     description: 'Les nouvelles fonctionnalités d\'IA dans Unreal Engine 5 qui transforment le développement de jeux.',
+    image: 'https://images.unsplash.com/photo-1718011087751-e82f1792aa32?w=800&auto=format&fit=crop',
     content: [
       'Unreal Engine 5.4 introduit des outils d\'IA révolutionnaires pour la génération procédurale. Le système PCG (Procedural Content Generation) permet de créer automatiquement des environnements complexes, des villes entières et des écosystèmes naturels.',
       'Les systèmes d\'animation assistés par IA, comme Motion Matching et l\'IK (Inverse Kinematics) amélioré, permettent des animations plus réalistes et fluides. Les personnages peuvent s\'adapter dynamiquement au terrain et aux obstacles.',
@@ -74,28 +77,34 @@ const articles: Article[] = [
   },
   {
     id: 3,
-    title: 'Ray Tracing et DLSS 4 : L\'IA au service de la performance',
-    date: '10 Février 2026',
+    title: 'DLSS 5 et Multi Frame Generation : La révolution graphique IA',
+    date: '20 Avril 2026',
     category: 'Technologie',
-    summary: 'NVIDIA DLSS 4 et AMD FSR 4 utilisent l\'IA pour générer des frames et améliorer massivement les performances graphiques tout en maintenant une qualité visuelle exceptionnelle.',
-    tags: ['Ray Tracing', 'DLSS', 'Performance'],
-    description: 'Comment l\'IA permet d\'obtenir des graphismes ray-tracés en temps réel sans sacrifier les performances.',
+    summary: 'NVIDIA DLSS 5 introduit la génération multi-frames avec IA transformer, multipliant les performances par 8 tout en améliorant la qualité visuelle. Path tracing en temps réel devient accessible à tous.',
+    tags: ['DLSS 5', 'Ray Tracing', 'IA', 'Performance'],
+    description: 'DLSS 5 révolutionne le rendu temps réel avec la génération multi-frames par IA et le path tracing accessible.',
+    image: 'https://images.unsplash.com/photo-1717501218198-816a64915f81?w=800&auto=format&fit=crop',
     content: [
-      'DLSS 4 (Deep Learning Super Sampling) de NVIDIA représente une avancée majeure. La génération de frames par IA permet de multiplier par 4 les performances tout en maintenant une qualité d\'image supérieure à la résolution native.',
-      'La technologie Ray Reconstruction utilise l\'IA pour débruiter les scènes ray-tracées en temps réel, permettant d\'obtenir un éclairage photoréaliste même sur du matériel mid-range. Les reflets, les ombres et l\'illumination globale atteignent des niveaux de qualité inédits.',
-      'AMD FSR 4 (FidelityFX Super Resolution) adopte également le machine learning avec son propre tensor cores. La concurrence pousse l\'innovation et rend ces technologies accessibles à un plus large public.',
-      'L\'impact sur le game design est considérable : les développeurs peuvent créer des mondes plus détaillés, avec un éclairage dynamique complexe, sans se soucier excessivement de l\'optimisation traditionnelle.'
+      'DLSS 5 (Deep Learning Super Sampling 5) marque un tournant historique avec sa technologie Multi Frame Generation basée sur des transformers. Contrairement à DLSS 4 qui générait jusqu\'à 3 frames intermédiaires, DLSS 5 peut en générer jusqu\'à 7, multipliant les performances par 8 sans perte de qualité.',
+      'La nouvelle architecture utilise des modèles transformer entraînés sur des milliards de frames de jeux vidéo. L\'IA prédit non seulement le mouvement mais aussi l\'éclairage, les reflets et les ombres avec une précision quasi parfaite. Le résultat : path tracing complet en temps réel même sur des cartes RTX 5060.',
+      'Ray Reconstruction 2.0 améliore drastiquement le débruitage des scènes path-tracées. Les artefacts de bruit disparaissent complètement, permettant un éclairage global photoréaliste à 60+ FPS en 4K. Les matériaux complexes (verre, eau, métaux) sont rendus avec une fidélité jamais vue en temps réel.',
+      'L\'impact est massif : les développeurs peuvent enfin abandonner les techniques de rasterisation traditionnelles et adopter le full path tracing. Des jeux comme Cyberpunk 2078 et les nouvelles itérations d\'Unreal Engine 6 exploitent déjà DLSS 5 pour offrir des graphismes dignes du cinéma en temps interactif.'
     ],
     sources: [
       {
-        title: 'NVIDIA - DLSS 4 Technology',
+        title: 'NVIDIA - DLSS 5 Multi Frame Generation',
         url: 'https://www.nvidia.com/en-us/geforce/technologies/dlss/',
-        date: 'Février 2026'
+        date: 'Avril 2026'
       },
       {
-        title: 'Digital Foundry - DLSS 4 Analysis',
+        title: 'Digital Foundry - DLSS 5 Technical Deep Dive',
         url: 'https://www.eurogamer.net/digitalfoundry',
-        date: 'Janvier 2026'
+        date: 'Avril 2026'
+      },
+      {
+        title: 'Tom\'s Hardware - DLSS 5 Benchmark Analysis',
+        url: 'https://www.tomshardware.com/reviews/dlss-5-benchmark',
+        date: 'Mars 2026'
       }
     ]
   },
@@ -107,6 +116,7 @@ const articles: Article[] = [
     summary: 'Les systèmes d\'IA modernes permettent de créer des NPCs avec des comportements complexes, des émotions et des dialogues naturels, rendant les mondes de jeu plus vivants.',
     tags: ['NPC', 'IA', 'Gameplay'],
     description: 'L\'évolution des NPCs grâce à l\'intelligence artificielle et au machine learning.',
+    image: 'https://images.unsplash.com/photo-1717501219263-9aa2d6a768d0?w=800&auto=format&fit=crop',
     content: [
       'Les NPCs traditionnels suivaient des scripts prédéfinis et des arbres de décision simples. Aujourd\'hui, les systèmes d\'IA permettent des comportements émergents et adaptatifs. Les personnages apprennent des actions du joueur et ajustent leurs stratégies.',
       'Les Large Language Models (LLMs) permettent des dialogues naturels et contextuels. Dans certains jeux expérimentaux, les joueurs peuvent converser librement avec les NPCs qui génèrent des réponses cohérentes avec leur personnalité et l\'histoire du jeu.',
@@ -123,6 +133,105 @@ const articles: Article[] = [
         title: 'Inworld AI - Character Engine',
         url: 'https://www.inworld.ai/',
         date: 'Décembre 2025'
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: 'NeRF et Photogrammétrie : Capture 3D par IA',
+    date: '18 Avril 2026',
+    category: 'Graphisme',
+    summary: 'Les Neural Radiance Fields (NeRF) révolutionnent la capture 3D en créant des modèles photoréalistes à partir de simples photos. La photogrammétrie assistée par IA atteint des niveaux de qualité inégalés.',
+    tags: ['NeRF', 'Photogrammétrie', '3D', 'IA'],
+    description: 'Comment les NeRF et l\'IA transforment la capture et la reconstruction 3D pour les jeux vidéo.',
+    image: 'https://images.unsplash.com/photo-1687389835588-a87c4ea925ac?w=800&auto=format&fit=crop',
+    content: [
+      'Les Neural Radiance Fields (NeRF) représentent une percée majeure dans la reconstruction 3D. Cette technique utilise des réseaux de neurones pour créer des modèles 3D volumétriques photoréalistes à partir de simples séries de photos 2D. Les résultats surpassent largement la photogrammétrie traditionnelle.',
+      'NVIDIA Instant NeRF permet de générer un modèle 3D complet en quelques secondes seulement, contre plusieurs heures avec les méthodes classiques. La qualité des textures, l\'éclairage et les reflets sont capturés avec une fidélité exceptionnelle, ouvrant de nouvelles possibilités pour la création d\'environnements réalistes.',
+      'Les studios de jeux adoptent ces technologies pour scanner des lieux réels et les intégrer directement dans leurs jeux. Des outils comme Luma AI et Polycam rendent cette technologie accessible même aux petits studios. La capture d\'acteurs et d\'objets atteint un niveau de réalisme impossible à obtenir par modélisation manuelle.',
+      'Les défis incluent la taille importante des datasets NeRF et la difficulté d\'éditer les modèles générés. Des recherches sont en cours pour convertir les NeRF en meshes 3D éditables et optimisés pour le rendu temps réel. Gaussian Splatting émerge comme alternative plus performante pour certains cas d\'usage.'
+    ],
+    sources: [
+      {
+        title: 'NVIDIA - Instant NeRF',
+        url: 'https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31151/',
+        date: 'Avril 2026'
+      },
+      {
+        title: 'Luma AI - NeRF Capture',
+        url: 'https://lumalabs.ai/',
+        date: 'Mars 2026'
+      },
+      {
+        title: 'SIGGRAPH - NeRF in Game Development',
+        url: 'https://www.siggraph.org/nerf-gaming/',
+        date: 'Février 2026'
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: 'Animation par IA : Motion Capture nouvelle génération',
+    date: '10 Avril 2026',
+    category: 'Animation',
+    summary: 'L\'IA transforme l\'animation de personnages avec des systèmes de motion capture markerless, de l\'animation procédurale avancée et la génération automatique de cycles d\'animation réalistes.',
+    tags: ['Animation', 'Motion Capture', 'IA', 'Procédural'],
+    description: 'Les nouvelles technologies d\'animation assistées par IA qui démocratisent le motion capture et améliorent la qualité des animations.',
+    image: 'https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?w=800&auto=format&fit=crop',
+    content: [
+      'La motion capture sans marqueurs (markerless mocap) propulsée par IA devient la norme. Des outils comme Move.ai, DeepMotion et Plask utilisent des caméras standards pour capturer des mouvements 3D complets sans équipement spécialisé. Un simple smartphone suffit désormais pour obtenir des animations de qualité professionnelle.',
+      'Les réseaux de neurones peuvent générer automatiquement des animations réalistes à partir de descriptions textuelles. "Un personnage courant en évitant des obstacles" devient une instruction directe pour créer une séquence d\'animation complète. Cette approche accélère drastiquement la production d\'assets d\'animation.',
+      'Motion Matching 2.0 intègre l\'apprentissage par renforcement pour créer des transitions fluides entre animations. Les personnages s\'adaptent intelligemment au terrain, aux objets et aux situations. Les animations deviennent contextuelles et naturelles, éliminant l\'aspect robotique des systèmes traditionnels.',
+      'L\'IA permet également le retargeting automatique : une animation capturée sur un acteur humain peut être transférée instantanément sur n\'importe quel rig de personnage, qu\'il soit humanoïde, animal ou créature fantastique. Les ajustements manuels fastidieux appartiennent au passé.'
+    ],
+    sources: [
+      {
+        title: 'Move.ai - AI Motion Capture',
+        url: 'https://www.move.ai/',
+        date: 'Avril 2026'
+      },
+      {
+        title: 'DeepMotion - Animate 3D',
+        url: 'https://www.deepmotion.com/',
+        date: 'Mars 2026'
+      },
+      {
+        title: 'Unity - AI Animation Tools',
+        url: 'https://unity.com/products/animation',
+        date: 'Février 2026'
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: 'Cloud Gaming et IA : Latence zéro grâce au Machine Learning',
+    date: '5 Avril 2026',
+    category: 'Infrastructure',
+    summary: 'Les plateformes de cloud gaming utilisent l\'IA pour prédire les actions des joueurs, compenser la latence réseau et offrir une expérience indiscernable du jeu local.',
+    tags: ['Cloud Gaming', 'Streaming', 'Latence', 'IA'],
+    description: 'Comment l\'intelligence artificielle permet au cloud gaming d\'atteindre des performances comparables au gaming local.',
+    image: 'https://images.unsplash.com/photo-1724820205981-8321546b81c5?w=800&auto=format&fit=crop',
+    content: [
+      'La latence a toujours été le talon d\'Achille du cloud gaming. Les nouvelles plateformes utilisent des modèles d\'IA pour prédire les inputs du joueur avant même qu\'ils ne soient envoyés. En analysant les patterns de jeu, l\'IA anticipe les mouvements et pré-calcule les frames correspondantes, réduisant la latence perçue à quasi-zéro.',
+      'NVIDIA GeForce NOW et Xbox Cloud Gaming déploient des systèmes de prédiction de trajectoire qui analysent le gameplay en temps réel. Pour les jeux compétitifs (FPS, fighting games), cette technologie compense jusqu\'à 50ms de latence réseau, rendant l\'expérience comparable au jeu local.',
+      'L\'IA optimise également la compression vidéo en temps réel. Des algorithmes de machine learning identifient les zones importantes de l\'écran (réticule, HUD, personnages) et allouent dynamiquement plus de bande passante à ces zones tout en compressant agressivement les arrière-plans statiques. Le résultat : meilleure qualité visuelle avec moins de données.',
+      'L\'edge computing combiné à l\'IA permet de déployer des serveurs de jeu au plus près des joueurs. Des algorithmes prédictifs analysent la charge réseau et migrent automatiquement les sessions vers les data centers optimaux. Microsoft Azure PlayFab intègre désormais ces capacités nativement pour tous les développeurs.'
+    ],
+    sources: [
+      {
+        title: 'NVIDIA - GeForce NOW AI Latency Reduction',
+        url: 'https://www.nvidia.com/en-us/geforce-now/',
+        date: 'Avril 2026'
+      },
+      {
+        title: 'Microsoft - Azure PlayFab AI',
+        url: 'https://playfab.com/',
+        date: 'Mars 2026'
+      },
+      {
+        title: 'Google - Stadia AI Prediction',
+        url: 'https://stadia.google.com/gg/blog/ai-prediction',
+        date: 'Février 2026'
       }
     ]
   },
@@ -175,6 +284,17 @@ export function TechWatchPage() {
             </div>
           </div>
         </div>
+
+        {/* Article Image */}
+        {selectedArticle.image && (
+          <div className="max-w-4xl mx-auto px-4 py-8">
+            <img
+              src={selectedArticle.image}
+              alt={selectedArticle.title}
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+        )}
 
         {/* Article Content */}
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -238,8 +358,18 @@ export function TechWatchPage() {
           {articles.map((article) => (
             <div
               key={article.id}
-              className="bg-white border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-white border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => setSelectedArticle(article)}
             >
+              {article.image && (
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1.5 bg-primary/10 text-primary border border-primary/10 rounded-lg text-sm font-semibold">
@@ -269,13 +399,10 @@ export function TechWatchPage() {
                   ))}
                 </div>
 
-                <button
-                  onClick={() => setSelectedArticle(article)}
-                  className="flex items-center text-primary hover:underline font-medium"
-                >
+                <div className="flex items-center text-primary hover:underline font-medium">
                   <span>Lire l'article complet</span>
                   <ArrowRight size={16} className="ml-2" />
-                </button>
+                </div>
               </div>
             </div>
           ))}

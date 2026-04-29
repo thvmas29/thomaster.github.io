@@ -135,15 +135,25 @@ export function ProjectDetailPage() {
                 <p className="text-muted-foreground mb-4">
                   Consultez la documentation complète pour plus de détails sur l'architecture, les schémas et les spécifications techniques du projet.
                 </p>
-                <a
-                  href={project.documentationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
-                >
-                  <FileText size={18} />
-                  <span>Télécharger la documentation (PDF)</span>
-                </a>
+                <div className="flex flex-wrap gap-3">
+                  {project.id === 'blog-app-cakephp' && (
+                    <Link
+                      to="/projets/blog-app-cakephp/documentation"
+                      className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
+                    >
+                      <FileText size={18} />
+                      <span>Voir la documentation</span>
+                    </Link>
+                  )}
+                  <a
+                    href={`${import.meta.env.BASE_URL}${project.documentationUrl}`}
+                    download
+                    className="inline-flex items-center space-x-2 px-6 py-3 bg-white border border-border text-foreground rounded-lg hover:bg-slate-100 transition-colors font-medium"
+                  >
+                    <FileText size={18} />
+                    <span>Télécharger le PDF</span>
+                  </a>
+                </div>
               </div>
             </div>
           </section>

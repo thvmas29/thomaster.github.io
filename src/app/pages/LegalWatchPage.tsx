@@ -11,6 +11,7 @@ interface LegalArticle {
   description: string;
   content: string[];
   impactDetail: string;
+  image?: string;
   sources: {
     title: string;
     url: string;
@@ -28,6 +29,7 @@ const articles: LegalArticle[] = [
     impact: 'Critique',
     description: 'État des lieux juridique sur la propriété intellectuelle des contenus générés par IA dans l\'industrie du jeu vidéo.',
     impactDetail: 'Les studios de jeux vidéo doivent clarifier la propriété des assets générés par IA dans leurs contrats. L\'absence de cadre juridique clair peut entraîner des litiges coûteux et compromettre la commercialisation des jeux.',
+    image: 'https://images.unsplash.com/photo-1654588833369-5174f4640cd2?w=800&auto=format&fit=crop',
     content: [
       'En 2026, plusieurs pays commencent à légiférer sur la propriété des œuvres générées par IA. Aux États-Unis, le Copyright Office a statué qu\'une œuvre créée entièrement par IA sans intervention humaine significative ne peut être protégée par le droit d\'auteur.',
       'L\'Union Européenne adopte une approche différente : si un artiste utilise l\'IA comme outil et apporte une contribution créative substantielle (choix artistiques, modifications, curation), l\'œuvre peut être protégée. Le degré d\'intervention humaine devient le critère clé.',
@@ -56,6 +58,7 @@ const articles: LegalArticle[] = [
     impact: 'Élevé',
     description: 'Les implications juridiques de l\'utilisation d\'œuvres protégées pour entraîner des modèles d\'IA générative.',
     impactDetail: 'Les studios qui utilisent des outils d\'IA générative risquent des poursuites si les modèles ont été entraînés sur des œuvres protégées. Les amendes peuvent être considérables et affecter la commercialisation des jeux.',
+    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&fit=crop',
     content: [
       'Plusieurs grands studios de jeux vidéo ont intenté des procès contre Stability AI, Midjourney et d\'autres, alléguant que leurs modèles ont été entraînés sur des millions d\'images protégées par le droit d\'auteur sans autorisation ni compensation.',
       'Les arguments juridiques sont complexes : les entreprises d\'IA invoquent le "fair use" (utilisation équitable), arguant que l\'entraînement de modèles constitue une transformation substantielle. Les plaignants rétorquent que c\'est une violation massive du copyright.',
@@ -84,6 +87,7 @@ const articles: LegalArticle[] = [
     impact: 'Élevé',
     description: 'Impact du règlement européen sur l\'intelligence artificielle sur l\'industrie du jeu vidéo.',
     impactDetail: 'Les studios européens doivent se conformer à l\'AI Act sous peine de sanctions pouvant atteindre 7% du chiffre d\'affaires mondial. Les systèmes d\'IA utilisés dans les jeux doivent être documentés et audités.',
+    image: 'https://images.unsplash.com/photo-1614064850003-13dbfd69fd11?w=800&auto=format&fit=crop',
     content: [
       'L\'AI Act classe les systèmes d\'IA en quatre catégories de risque : inacceptable, élevé, limité et minimal. La plupart des IA dans les jeux vidéo sont considérées à risque limité, nécessitant des obligations de transparence.',
       'Les systèmes d\'IA générative (texte, image, audio) doivent clairement indiquer que le contenu est généré artificiellement. Les jeux utilisant des NPCs avec dialogues IA doivent en informer les joueurs.',
@@ -112,6 +116,7 @@ const articles: LegalArticle[] = [
     impact: 'Moyen',
     description: 'Les obligations éthiques et légales concernant les biais dans les systèmes d\'IA conversationnelle des jeux vidéo.',
     impactDetail: 'Les studios doivent auditer leurs systèmes d\'IA pour détecter et corriger les biais discriminatoires. Le non-respect peut entraîner des amendes et une mauvaise publicité dommageable pour la marque.',
+    image: 'https://images.unsplash.com/photo-1614064849549-ba6c7b819a49?w=800&auto=format&fit=crop',
     content: [
       'Les LLMs (Large Language Models) utilisés pour les NPCs peuvent reproduire des biais présents dans leurs données d\'entraînement : stéréotypes de genre, racisme, représentations discriminatoires. Ces biais sont inacceptables dans des produits commerciaux.',
       'Plusieurs jeux ont dû retirer ou modifier des fonctionnalités IA après que des joueurs aient découvert des dialogues inappropriés ou offensants générés par les NPCs. La réputation des studios a été affectée et des plaintes ont été déposées.',
@@ -128,6 +133,108 @@ const articles: LegalArticle[] = [
         title: 'IEEE - AI Ethics in Gaming',
         url: 'https://standards.ieee.org/industry-connections/ai-ethics/',
         date: 'Décembre 2025'
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: 'RGPD et protection des données de jeu : Les nouvelles exigences',
+    date: '15 Avril 2026',
+    category: 'Protection des données',
+    summary: 'Les régulateurs européens intensifient les contrôles sur la collecte et l\'utilisation des données des joueurs. Les systèmes d\'IA qui analysent le comportement des joueurs doivent respecter le RGPD.',
+    impact: 'Critique',
+    description: 'Les obligations du RGPD appliquées aux données de gaming et aux systèmes d\'IA qui profilent les joueurs.',
+    impactDetail: 'Les studios européens risquent des amendes pouvant atteindre 4% du chiffre d\'affaires mondial en cas de non-conformité RGPD. La collecte de données comportementales par l\'IA nécessite un consentement explicite.',
+    image: 'https://images.unsplash.com/photo-1614064745490-83abb17303e1?w=800&auto=format&fit=crop',
+    content: [
+      'Les jeux modernes collectent des quantités massives de données : temps de jeu, préférences, interactions sociales, achats in-game, données biométriques (eye-tracking, reconnaissance faciale). Les systèmes d\'IA analysent ces données pour personnaliser l\'expérience, prédire les comportements et optimiser la monétisation.',
+      'Le RGPD exige un consentement explicite pour cette collecte et ce profilage. Les joueurs doivent être clairement informés de quelles données sont collectées, pourquoi, et comment elles sont utilisées. Les studios doivent implémenter des mécanismes opt-in clairs, pas des cases pré-cochées cachées dans des CGU interminables.',
+      'La CNIL française a infligé plusieurs amendes record à des éditeurs de jeux mobile pour violations du RGPD : collecte excessive de données, absence de consentement valable, transferts de données vers des pays tiers sans garanties appropriées. Les jeux freemium sont particulièrement scrutés pour leurs pratiques de tracking agressif.',
+      'Les studios doivent désormais implémenter le "privacy by design" : minimisation des données collectées, pseudonymisation, chiffrement, et droit à l\'effacement. Les systèmes d\'IA doivent être auditables : les joueurs ont le droit de savoir comment l\'IA utilise leurs données et de s\'opposer aux décisions automatisées les concernant.'
+    ],
+    sources: [
+      {
+        title: 'CNIL - Gaming et RGPD',
+        url: 'https://www.cnil.fr/fr/gaming-rgpd',
+        date: 'Avril 2026'
+      },
+      {
+        title: 'Commission Européenne - RGPD Guide for Gaming',
+        url: 'https://ec.europa.eu/justice/data-protection/gaming',
+        date: 'Mars 2026'
+      },
+      {
+        title: 'EDPB - Guidelines on AI and GDPR',
+        url: 'https://edpb.europa.eu/our-work-tools/our-documents/guidelines/ai-gdpr_en',
+        date: 'Février 2026'
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: 'Deepfakes et usurpation d\'identité dans les jeux vidéo',
+    date: '8 Avril 2026',
+    category: 'Droit à l\'image',
+    summary: 'L\'IA générative permet de créer des personnages ultra-réalistes ressemblant à des personnes réelles sans leur consentement. Les législateurs réagissent avec de nouvelles lois anti-deepfake.',
+    impact: 'Élevé',
+    description: 'Les enjeux juridiques de l\'utilisation de l\'IA pour créer des personnages ressemblant à des personnes réelles dans les jeux vidéo.',
+    impactDetail: 'Les studios risquent des poursuites pour atteinte au droit à l\'image et usurpation d\'identité. Les nouvelles lois anti-deepfake imposent des obligations de consentement et de watermarking.',
+    image: 'https://images.unsplash.com/photo-1614064850003-13dbfd69fd11?w=800&auto=format&fit=crop',
+    content: [
+      'Des joueurs ont découvert que certains jeux utilisent l\'IA pour générer des NPCs dont les visages ressemblent étrangement à des célébrités ou même à des joueurs réels (via analyse de photos publiques sur les réseaux sociaux). Ces pratiques soulèvent des questions juridiques majeures sur le droit à l\'image et le consentement.',
+      'En 2026, plusieurs pays adoptent des lois "anti-deepfake" spécifiquement pour encadrer l\'utilisation commerciale de sosies générés par IA. L\'utilisation de la ressemblance d\'une personne réelle sans son consentement écrit explicite devient passible de sanctions pénales, pas seulement civiles.',
+      'Les acteurs et mannequins dont les visages ont été scannés pour des jeux poursuivent des studios qui réutilisent leurs likeness générés par IA dans d\'autres contextes non prévus au contrat initial. Les contrats de numérisation 3D doivent désormais préciser exactement comment et où les données peuvent être utilisées.',
+      'Des technologies de watermarking et de traçabilité sont développées pour identifier les contenus générés par IA. La Coalition for Content Provenance and Authenticity (C2PA) travaille avec les studios de jeux pour implémenter des standards de certification des assets, permettant de vérifier si un visage est réel ou généré.'
+    ],
+    sources: [
+      {
+        title: 'US Congress - Deepfake Accountability Act',
+        url: 'https://www.congress.gov/bill/deepfake-act',
+        date: 'Avril 2026'
+      },
+      {
+        title: 'SAG-AFTRA - AI Likeness Rights',
+        url: 'https://www.sagaftra.org/ai-likeness-rights',
+        date: 'Mars 2026'
+      },
+      {
+        title: 'C2PA - Content Authenticity',
+        url: 'https://c2pa.org/',
+        date: 'Février 2026'
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: 'Voice Cloning et droits des acteurs de doublage',
+    date: '22 Mars 2026',
+    category: 'Propriété intellectuelle',
+    summary: 'L\'IA permet de cloner des voix à partir de quelques secondes d\'enregistrement. Les acteurs de doublage se mobilisent pour protéger leurs droits vocaux face à l\'IA.',
+    impact: 'Critique',
+    description: 'Les enjeux juridiques du clonage de voix par IA et la protection des droits des comédiens de doublage dans l\'industrie du jeu vidéo.',
+    impactDetail: 'Les studios doivent obtenir un consentement explicite pour utiliser l\'IA afin de générer de nouveaux dialogues avec la voix clonée d\'un acteur. Les syndicats négocient de nouveaux accords collectifs incluant des clauses anti-IA.',
+    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&fit=crop',
+    content: [
+      'Les technologies de voice cloning (ElevenLabs, Resemble AI, Respeecher) permettent de générer un nombre illimité de dialogues avec la voix d\'un acteur à partir d\'un enregistrement initial de quelques heures seulement. Cette révolution technologique menace directement l\'emploi des comédiens de doublage.',
+      'En 2026, SAG-AFTRA (le syndicat des acteurs américains) et les syndicats européens obtiennent des avancées majeures. Les nouveaux contrats imposent que le clonage vocal nécessite un consentement explicite séparé, une rémunération supplémentaire pour chaque utilisation de l\'IA, et un droit de véto sur les textes générés.',
+      'Plusieurs procès emblématiques ont établi une jurisprudence : la voix est une partie de l\'identité d\'une personne et ne peut être exploitée commercialement sans autorisation, même via IA. Un studio ayant utilisé un voice clone sans autorisation a été condamné à verser des dommages-intérêts équivalents à ce que l\'acteur aurait gagné pour enregistrer réellement les dialogues.',
+      'Des solutions éthiques émergent : certains studios proposent des accords où les acteurs sont payés pour créer un modèle vocal IA utilisable pour des extensions/DLCs futurs, avec partage des revenus. D\'autres développent des voix IA synthétiques qui ne ressemblent à aucune personne réelle, évitant ainsi les problèmes de droits.'
+    ],
+    sources: [
+      {
+        title: 'SAG-AFTRA - AI Voice Cloning Agreement',
+        url: 'https://www.sagaftra.org/files/ai-voice-agreement.pdf',
+        date: 'Mars 2026'
+      },
+      {
+        title: 'Equity UK - Voice Rights Protection',
+        url: 'https://www.equity.org.uk/getting-involved/campaigns/voice-rights',
+        date: 'Février 2026'
+      },
+      {
+        title: 'WIPO - Voice as Intellectual Property',
+        url: 'https://www.wipo.int/voice-ip-rights',
+        date: 'Janvier 2026'
       }
     ]
   },
@@ -186,6 +293,17 @@ export function LegalWatchPage() {
             </div>
           </div>
         </div>
+
+        {/* Article Image */}
+        {selectedArticle.image && (
+          <div className="max-w-4xl mx-auto px-4 py-8">
+            <img
+              src={selectedArticle.image}
+              alt={selectedArticle.title}
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+        )}
 
         {/* Article Content */}
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -249,8 +367,18 @@ export function LegalWatchPage() {
           {articles.map((article) => (
             <div
               key={article.id}
-              className="bg-white border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-white border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => setSelectedArticle(article)}
             >
+              {article.image && (
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-sm font-semibold">
@@ -270,13 +398,10 @@ export function LegalWatchPage() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <p className="text-sm text-muted-foreground">{article.date}</p>
-                  <button
-                    onClick={() => setSelectedArticle(article)}
-                    className="flex items-center text-primary hover:underline font-medium text-sm"
-                  >
+                  <div className="flex items-center text-primary hover:underline font-medium text-sm">
                     <span>Lire l'article</span>
                     <ArrowRight size={16} className="ml-2" />
-                  </button>
+                  </div>
                 </div>
               </div>
             </div>

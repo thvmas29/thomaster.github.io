@@ -48,7 +48,7 @@ export const projects: Project[] = [
         }
       ]
     },
-    documentationUrl: '/src/imports/Documentation_BLOC_APP_TERRAL_Thomas_v4.pdf'
+    documentationUrl: 'Documentation_BLOG_APP.pdf'
   },
   {
     id: 'application-gestion',
