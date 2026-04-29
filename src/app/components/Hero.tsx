@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, ArrowRight, Briefcase } from 'lucide-react';
 
 export function Hero() {
